@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div id="showcase">
+    <div class="container">
+        <div id="WelcomeText">
+            <h1>Charitable Foundation Help Pets</h1>
+            <p>We are responsible, forever, for what we have tamed</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="AboutText">
+    <h2>Who are we?</h2>
+</div>
+    <div class="FundInfo">
+        <div class="container">
+            <p>
+                We are Charitable Foundation "Help Pets", founded in 2018. We care about animals' lives and save thousands of them every year.
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+            </p>
+        </div>
+    </div>
+
+    <div id="MainFunc">
+            <button class = "funcBtn" onclick="location.href='{% url 'about' %}'"> About us </button>
+            <button class = "funcBtn" onclick="location.href='{% url 'reports' %}'"> Reports </button>
+            <button class = "funcBtn" onclick="location.href='{% url 'help' %}'"> Help us</button>
+    </div>
+
+    <div id="Help">
+        <div class="container"> 
+            <div class="box" id="box1">
+                <img class="box_image" src="{% static 'imgs/box1.jpg' %}">
+                <button onclick="location.href='Adopt.html'">Rehome a pet</button>
+            </div>
+            <div class="box" id="box2">
+                <img class="box_image" src="{% static 'imgs/box2.jpg' %}">
+                <button onclick="location.href='Rehome.html'">Sponsor a pet</button>
+            </div>
+            <div class="box" id="box3">
+                <img class="box_image" src="{% static 'imgs/box3.jpg' %}">
+                <button>Make a donation</button>
+            </div>
+
+            <div class="box" id="box4">
+                <img class="box_image" src="{% static 'imgs/box4.jpg' %}">
+                <button onclick="location.href='Help.html'">Become a volunteer</button>
+            </div>
+      
+        </div>
+    </div>
+
+{% endblock content %}

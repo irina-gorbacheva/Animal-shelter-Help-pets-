@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section id="showcaseHelp">
+        <div class="container">
+            <div id="HelpText">
+                <h1> They need your help!</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="AboutText">
+        <h2>How can you help pets? </h2>
+    </section>
+
+    <section class="FundInfo">
+        <section class="container">
+            <article>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            </article>
+        </section>
+    </section>
+
+    <section class="AboutText">
+        <h2> Choose your location and help pets!</h2>
+    </section>
+    <section class ="FundInfo">
+        <section class="container">
+            <div id="map"></div>
+        </section>
+    </section>
+
+</main>
+
+    <script>
+        function initMap(){
+            var location = {lat: 49.985950, lng: 36.273540};
+            var map =  new google.maps.Map(document.getElementById("map"), {
+                zoom:12,
+                center: location
+            });
+
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    var marker = new google.maps.Marker({position: pos, map: map});
+
+                });
+            } else {
+
+                document.getElementById("map").innerText = "Пожалуйста, включите геолокацию"
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7RPHpJ19Cg5qCm6io8z114kz_mk4Lk3c&callback=initMap"></script>
+{% endblock content %}

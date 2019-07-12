@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <table id="report">
+        <tr>
+            <th class="title">Year</th>
+            <th class="title">Month</th>
+            <th class="title">Resqued pets</th>
+            <th class="title">Money spent</th>
+            <th class="title">Spends</th>
+        </tr>
+        {% for report in reports %}
+            <tr>
+                <th>{{report.year}}</th>
+                <th>{{report.month}}</th>
+                <th>{{report.pets_resqued}}</th>
+                <th>{{report.money_spent}}</th>
+                <th>{{report.spends}}</th>
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="FundInfo">
+    <div class="container">
+        <h2> {{ pet.name|capfirst }} </h2>
+        <p> {{pet.species}}</p>
+        {% if pet.breed %}
+        <p> Breed: {{pet.breed}}</p>
+        {% endif %}
+        <p> City: {{pet.get_city_display }}</p>
+        <p>Gender: {{pet.get_sex_display }}</p>
+        {% if pet.age %}
+        <p>Age: {{pet.age }}</p>
+        {% endif %}
+        <p>Submitted: {{pet.submission_date}}</p>
+        {% if pet.vaccinations.all %}
+        <p> Vaccinations:</p>
+        <ul>
+            {% for vaccination in pet.vaccinations.all %}
+            <li> {{vaccination.name}} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section id="showcaseHelp">
+    <div class="container">
+        <div id="HelpText">
+            <h1> Adopt a nice pet, save its life!</h1>
+        </div>
+    </div>
+</section>
+
+
+    {% for pet in pets %}
+    <div class="AboutText">
+        <a href="{% url 'pet_detail' pet.id %}">
+            <h2> {{ pet.name|capfirst }} </h2>
+        </a>
+    </div>
+    <div class="FundInfo">
+        <div class="container">
+            <p> {{pet.species}}</p>
+            {% if pet.breed %}
+            <p> {{pet.breed}}</p>
+            {% endif %}
+
+        </div>
+    </div>
+  
+    {% endfor %}
+
+{% endblock content %}
+

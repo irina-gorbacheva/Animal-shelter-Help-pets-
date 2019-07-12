@@ -1,0 +1,79 @@
+ {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width">
+    <meta name="description" content="Help Pets. We care about animals.">
+    <meta name="keywords" content="charity, foundation, help pets, adoption">
+    <meta name="author" content="Irina Gorbacheva">
+    <title>Help Pets | Home page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="{% static 'imgs/footprint.png' %}">
+            <div id="logo">
+                <h1><span>Help</span> Pets</h1>
+            </div>
+
+            <div>
+                <button id ="popupclick">Donate</button>
+            </div>
+
+            <nav id="navbar" class="topnav">
+                <a href="{% url 'home' %}" id="cur">Home</a>
+                <a href="{% url 'help' %}">Help</a>
+                <a href="{% url 'adoption' %}">Rehoming</a>
+                <a href="{% url 'reports' %}">Reports</a>
+                <a href="{% url 'about' %}">About us</a>
+                <a href="javascript:void(0);" class="icon" onclick="responsive()">
+                    <svg width="30" height="30">
+                        <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                        <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                        <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                    </svg>
+                </a>
+            </nav>
+
+        </div>
+
+    </header>
+
+{% block content %}
+{% endblock content %}
+
+<footer id="footer">
+    <div class="container">
+
+        <div id="foot1">
+            <h3>Places</h3>
+            <p>Kharkov, Pushkinskaya street 62/2, 61001</p>
+            <p>Kiev, Kievskaya street 21, 51385</p>
+            <p>Odessa, Deribassovskaya street 5, 81934</p>
+        </div>
+        <div id="foot2">
+            <h2></h2>
+            <h3> Contacts</h3>
+            <p><a href="http://www.google.com" target="_blank">E-mail: HelpPets@gmail.com</a></p>
+            <p>Водафон: +38 099 123 45 67</p>
+            <p><a href="http://www.google.com" target="_blank">Telegram: @HelpPets</a></p>
+            <p><a href="http://www.google.com" target="_blank">Facebook: facebook.com/helppets</a></p>
+        </div>
+
+    </div>
+
+</footer>
+<script>
+    function responsive() {
+        var x = document.getElementById("navbar");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</body>
+</html>

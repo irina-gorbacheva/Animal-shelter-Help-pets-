@@ -1,0 +1,10 @@
+Name,Species,Breed,Sex,Age,City,Date,Vaccinations
+Fluffy,Dog,Hound,M,9,Kh,6/15/2019,Parvorious| Distemper | Parainfluenza | Leptospirosis
+Lucky,Cat,,M,4,Ki,5/10/2019,Canine influenza | Distemper | Lyme disease
+Nicky,Dog,German Shepherd,F,3,Od,6/15/2019,Parainfluenza
+Luna,Cat,British Shorthair,F,10,Ki,6/15/2019,
+Oliver,Rabbit,,F,2,Od,6/14/2019,Distemper | Parvorious
+Charlie,Bird,Parrot,M,4,Kh,5/10/2019,
+Nugget,Turtle,,M,3,Ki,5/19/2019,Distemper | Parvorious
+Lily,Cat,Bombay Cat,F,7,Od,5/23/2019,Canine influenza | Distemper | Lyme disease
+Bella,Dog,,F,12,Kh,6/1/2019,Canine influenza | Distemper | Lyme disease
